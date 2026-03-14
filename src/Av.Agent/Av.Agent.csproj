@@ -1,11 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Worker">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Av.Core\Av.Core.csproj" />
+    <ProjectReference Include="..\Av.Engine\Av.Engine.csproj" />
   </ItemGroup>
 </Project>

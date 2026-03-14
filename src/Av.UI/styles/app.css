@@ -1,0 +1,136 @@
+:root {
+  color-scheme: light;
+  --text: #111;
+  --bg: #fff;
+  --focus: #0046c0;
+  --surface: #f5f6f8;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: Segoe UI, sans-serif;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #fff;
+  padding: 0.5rem;
+  border: 2px solid var(--focus);
+}
+
+button,
+input,
+select {
+  min-height: 2rem;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+.status-card:focus-visible,
+nav button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: calc(100vh - 60px);
+}
+
+nav {
+  background: #081a3d;
+  color: #fff;
+  padding: 1rem;
+}
+
+nav button {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+main {
+  padding: 1rem;
+  background: var(--surface);
+}
+
+.status-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.status-card,
+.list-item-card {
+  background: #fff;
+  border: 1px solid #d4d8df;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.status-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.severity-badge,
+.inline-severity {
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.low {
+  background: #daf5df;
+  color: #185a21;
+}
+
+.medium {
+  background: #fff0c4;
+  color: #6e5300;
+}
+
+.high {
+  background: #ffd7c3;
+  color: #8c2a00;
+}
+
+.critical {
+  background: #ffd0d0;
+  color: #8c1111;
+}
+
+.event-list li,
+.list-item-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
