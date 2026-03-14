@@ -1,3 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Av.UI</AssemblyName>
+    <RootNamespace>Av.UI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="App.tsx" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="models.ts" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="components\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="hooks\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="pages\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="services\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="styles\**\*" CopyToOutputDirectory="PreserveNewest" />
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
