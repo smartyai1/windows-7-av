@@ -1,0 +1,35 @@
+name: Build Windows EXE
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ work ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Publish Av.UI EXE
+        run: |
+          dotnet publish src/Av.UI/Av.UI.csproj `
+            -c Release `
+            -r win-x64 `
+            -p:PublishSingleFile=true `
+            -p:SelfContained=true `
+            -p:IncludeNativeLibrariesForSelfExtract=true `
+            -o artifacts/win-x64
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-7-av-win-x64
+          path: artifacts/win-x64

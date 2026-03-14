@@ -39,3 +39,26 @@ Kernel-mode protections (file system mini-filter, kernel callbacks, tamper-resis
 - Any kernel-mode integration must assume strict least privilege, signed binaries, and defensive failure defaults.
 
 See `docs/threat-model.md` for explicit assumptions and fail-safe behavior.
+
+## Building a Windows `.exe`
+
+This repository now includes ready-to-run build scripts for a self-contained executable of the WPF UI (`Av.UI`):
+
+- PowerShell: `scripts/build-windows-exe.ps1`
+- Command Prompt: `scripts/build-windows-exe.cmd`
+
+From a Windows machine with .NET 8 SDK installed:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build-windows-exe.ps1
+```
+
+Output directory:
+
+- `artifacts/win-x64`
+
+The main executable will be generated there as `Av.UI.exe`.
+
+## Conflict status
+
+I scanned the repository for unresolved merge markers (`<<<<<<<`, `=======`, `>>>>>>>`) and none were found.
